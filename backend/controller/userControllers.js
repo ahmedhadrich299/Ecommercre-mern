@@ -31,7 +31,7 @@ const registerUser = async (req, res) => {
 
   if (userExists) {
     res.status(400)
-    throw new Error('User already exists')
+    res.json('User already exists')
   }
 
   const user = await User.create({
@@ -49,7 +49,7 @@ const registerUser = async (req, res) => {
     })
   } else {
     res.status(400)
-    throw new Error('Invalid user data')
+    res.json('Invalid user data')
   }
 }
 

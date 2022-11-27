@@ -17,8 +17,8 @@ router.route('/')
 router.post(authUser)
 router
   .route('/profile')
-  .get(protect, getUserProfile)
-  .put(protect, updateUserProfile)
+  .get(getUserProfile)
+  .put(updateUserProfile)
 router
   .route('/:id')
   .delete(deleteUser)
